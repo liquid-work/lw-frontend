@@ -1,6 +1,7 @@
 import { AppBar } from "@mui/material";
 import { styled } from "@mui/system";
 import React, { memo } from "react";
+import BalanceChip from "./BalanceChip";
 
 const StyledNav = styled(AppBar, {
     name: "StyledNav"
@@ -10,7 +11,7 @@ const StyledNav = styled(AppBar, {
     height: 70,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
     alignItems: "center",
     padding: 20
 });
@@ -18,6 +19,7 @@ const StyledNav = styled(AppBar, {
 const Nav = memo(() => {
     return <StyledNav>
         <h3>Liquidwork</h3>
+        <BalanceChip />
     </StyledNav>
 });
 
