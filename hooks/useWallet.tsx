@@ -6,7 +6,7 @@ import { LIQUIDWORK_CONTRACT_ADDRESS } from "../blockchain/constants";
 export default function useWallet() {
     const dispatch = useAppDispatch();
 
-    const [balance, setBalance] = useState<BigNumber>(null);
+    const [balance, setBalance] = useState<BigNumber>(BigNumber.from(0));
     const [address, setAddress] = useState<string>("");
     const [network, setNetwork] = useState<any>(null);
     const [provider, setProvider] = useState<any>(null);
@@ -53,7 +53,7 @@ export default function useWallet() {
 
     useEffect(() => {
         async function getBalance() {
-            setBalance(null); // todo with our contract
+            setBalance(BigNumber.from(0)); // todo with our contract
         }
         if (network && provider && address) {
             getBalance();
@@ -65,7 +65,7 @@ export default function useWallet() {
             if (!address) {
                 setAddress(accounts[0]);
             } else {
-                setBalance(null);
+                setBalance(BigNumber.from(0));
                 setAddress("");
                 setNetwork(null);
                 setProvider(null);
