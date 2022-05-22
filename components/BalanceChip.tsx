@@ -22,8 +22,8 @@ const BalanceChip = memo(() => {
             const userAddress = user?.get("ethAddress");
             if (userAddress) {
                 const options = {
-                    chain: "mumbai",
-                    address: userAddress
+                    chain: ("mumbai" as "mumbai"),
+                    address: String(userAddress)
                 };
                 const mumbaiBalance = await Web3Api.account.getNativeBalance(options);
                 const balance = Moralis.Units.FromWei(mumbaiBalance?.balance)

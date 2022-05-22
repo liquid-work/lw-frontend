@@ -12,4 +12,4 @@ const ConnectWallet = memo(() => {
     return <button disabled={isAuthenticated} onClick={() => authenticate()}>Connect Wallet</button>
 });
 
-export default ConnectWallet; 
+export default ConnectWallet;
