@@ -1,7 +1,7 @@
 import { styled } from "@mui/system";
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Chip from '@mui/material/Chip';
-import { formatEth } from "../blockchain/helpers";
+import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 
 const StyledBalanceChip = styled(Chip, {
     name: "StyledBalanceChip"
@@ -12,9 +12,29 @@ const StyledBalanceChip = styled(Chip, {
 });
 
 const BalanceChip = memo(() => {
-    // const formattedBalance = useMemo(() => formatEth(balance) || 0 + " MATICx", [balance]);
+    const [balance, setBalance] = useState<string>("");
 
-    return <StyledBalanceChip label={0} />
+    const { user, Moralis } = useMoralis();
+    const Web3Api = useMoralisWeb3Api();
+
+    useEffect(() => {
+        const fetchNativeBalance = async () => {
+            const userAddress = user?.get("ethAddress");
+            if (userAddress) {
+                const options = {
+                    chain: "mumbai",
+                    address: userAddress
+                };
+                const mumbaiBalance = await Web3Api.account.getNativeBalance(options);
+                const balance = Moralis.Units.FromWei(mumbaiBalance?.balance)
+                setBalance(balance);
+            }
+        };
+        fetchNativeBalance();
+    }, [Moralis.Units, Web3Api.account, user])
+
+
+    return <StyledBalanceChip label={balance} />
 });
 
 export default BalanceChip; 
