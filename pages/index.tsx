@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       <SuperBalanceChip />
       <br />
       <br />
-      <h3>Swap MATIC -> MATICX</h3>
+      <h3>Swap MATIC to MATICX</h3>
       <MaticSwap />
     </div>
   )
