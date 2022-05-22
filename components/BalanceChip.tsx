@@ -1,6 +1,5 @@
 import { styled } from "@mui/system";
 import React, { memo, useMemo } from "react";
-import useWallet from "../hooks/useWallet";
 import Chip from '@mui/material/Chip';
 import { formatEth } from "../blockchain/helpers";
 
@@ -13,10 +12,9 @@ const StyledBalanceChip = styled(Chip, {
 });
 
 const BalanceChip = memo(() => {
-    const { balance } = useWallet();
-    const formattedBalance = useMemo(() => formatEth(balance) || 0 + " MATICx", [balance]);
+    // const formattedBalance = useMemo(() => formatEth(balance) || 0 + " MATICx", [balance]);
 
-    return <StyledBalanceChip label={formattedBalance} />
+    return <StyledBalanceChip label={0} />
 });
 
 export default BalanceChip; 

@@ -13,7 +13,8 @@ const StyledNav = styled(AppBar, {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 20
+    padding: 20,
+    position: "relative"
 });
 
 const Nav = memo(() => {
