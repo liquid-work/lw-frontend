@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ConnectWallet from "../components/ConnectWallet";
+import MumbaiBalanceChip from "../components/MumbaiBalanceChip";
 import Nav from "../components/Nav";
+import SuperBalanceChip from "../components/SuperBalanceChip";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +15,12 @@ const Home: NextPage = () => {
       </Head>
       <Nav />
       <ConnectWallet />
+      <br />
+      <br />
+      <MumbaiBalanceChip />
+      <br />
+      <br />
+      <SuperBalanceChip />
     </div>
   )
 }

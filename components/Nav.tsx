@@ -1,7 +1,7 @@
 import { AppBar } from "@mui/material";
 import { styled } from "@mui/system";
 import React, { memo } from "react";
-import BalanceChip from "./BalanceChip";
+import MumbaiBalanceChip from "./MumbaiBalanceChip";
 
 const StyledNav = styled(AppBar, {
     name: "StyledNav"
@@ -20,7 +20,6 @@ const StyledNav = styled(AppBar, {
 const Nav = memo(() => {
     return <StyledNav>
         <h3>Liquidwork</h3>
-        <BalanceChip />
     </StyledNav>
 });
 

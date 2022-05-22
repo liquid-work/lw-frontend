@@ -11,7 +11,7 @@ const StyledBalanceChip = styled(Chip, {
     fontSize: 20
 });
 
-const BalanceChip = memo(() => {
+const MumbaiBalanceChip = memo(() => {
     const [balance, setBalance] = useState<string>("");
 
     const { user, Moralis } = useMoralis();
@@ -34,7 +34,7 @@ const BalanceChip = memo(() => {
     }, [Moralis.Units, Web3Api.account, user])
 
 
-    return <StyledBalanceChip label={balance} />
+    return <StyledBalanceChip label={(balance || 0) + " MATIC"} />
 });
 
-export default BalanceChip; 
+export default MumbaiBalanceChip; 
