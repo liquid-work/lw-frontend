@@ -39,7 +39,9 @@ const SuperBalanceChip = memo(() => {
     }, [Moralis.Units, Web3Api.account, user])
 
 
-    return <StyledBalanceChip label={(balance || 0) + " MATICX"} />
+    return <>
+        <StyledBalanceChip label={(balance || 0) + " MATICX"} />
+    </>
 });
 
 export default SuperBalanceChip; 

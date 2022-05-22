@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ConnectWallet from "../components/ConnectWallet";
+import MaticSwap from "../components/MaticSwap";
 import MumbaiBalanceChip from "../components/MumbaiBalanceChip";
 import Nav from "../components/Nav";
 import SuperBalanceChip from "../components/SuperBalanceChip";
@@ -21,6 +22,10 @@ const Home: NextPage = () => {
       <br />
       <br />
       <SuperBalanceChip />
+      <br />
+      <br />
+      <h3>Swap MATIC -> MATICX</h3>
+      <MaticSwap />
     </div>
   )
 }
